@@ -1,0 +1,16 @@
+class SelectionSort:
+
+    @staticmethod
+    def sort(nums):
+        for i in range(len(nums)):
+            minValIndex = i
+            for j in range(i, len(nums)):
+                if nums[j] < nums[minValIndex]:
+                    SelectionSort.swap(nums, minValIndex, j)
+        return nums
+
+    @staticmethod
+    def swap(nums, index1, index2):
+        tempVal = nums[index1]
+        nums[index1] = nums[index2]
+        nums[index2] = tempVal
